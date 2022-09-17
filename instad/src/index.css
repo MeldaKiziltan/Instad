@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Inter";
+  src: local("AssistantRegular"),
+    url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: normal;
+}

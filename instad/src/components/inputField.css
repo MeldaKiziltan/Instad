@@ -1,0 +1,17 @@
+.input-field-text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: black;
+}
+
+.input-field-box{
+    width: 528px;
+    height: 41px;
+
+    background: #FFFFFF;
+    border-radius: 15px;
+}
