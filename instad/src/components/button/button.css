@@ -1,0 +1,23 @@
+.button {
+    background: rgba(178, 98, 206, 0.95);
+    border-radius: 10px;
+
+    width: 197px;
+    height: 58px;
+
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 58px;
+}
+
+.button:hover {
+    cursor: pointer;
+
+    color: white;
+    font-weight: bold;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+    border: 1px solid white;
+}
