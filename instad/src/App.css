@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+.App{
   background: linear-gradient(90.32deg, rgba(178, 98, 206, 0.95) 2.77%, rgba(213, 176, 176, 0.39) 64.07%);
   min-height: 100vh;
   display: flex;
