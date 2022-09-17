@@ -1,6 +1,6 @@
 import './App.css';
 
-import InputField from './components/inputField.js';
+import InputField from './components/inputField/inputField.js';
 
 function App() {
   return (
