@@ -17,7 +17,7 @@
   background: linear-gradient(90.32deg, rgba(178, 98, 206, 0.95) 2.77%, rgba(213, 176, 176, 0.39) 64.07%);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -28,11 +28,40 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.flex-button {
+  display: flex;
+  margin: 20px;
+
+
+}
+
+.flex-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.flex-left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+.flex-test {
+  width: 400px;
+  height: 200px;
+  background-color: black;
+}
+
+.flex-button {
+  display: flex;
+  margin-left: auto;
 }
