@@ -3,15 +3,38 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 19px;
-
     color: black;
+    
+    line-height: 19px;
+    text-align: left;
+
+    padding-bottom: 2px;
 }
 
 .input-field-box{
     width: 528px;
     height: 41px;
 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(52, 52, 52);
+
     background: #FFFFFF;
     border-radius: 15px;
+    border-width: 0;
+
+    padding-left: 20px;
+
+}
+
+.input-field-box:hover {
+    border-color: rgba(178, 98, 206, 0.95); 
+    border-width: 2px;
+  }
+
+input:focus{
+    border-color: black; 
+    border-width: 2px;
 }
