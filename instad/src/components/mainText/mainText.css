@@ -8,14 +8,14 @@
     text-align: left;
 
     color: #FFFFFF;
-    text-shadow: 1px 1px 16px #535252;
+    filter: drop-shadow(1px 1px 16px rgba(0, 0, 0, 0.25));
 }
 
 .special {
     font-style: oblique;
     letter-spacing: 3px;
     color: #B262CEF2;
-    text-shadow: none;
+    filter: none;
 
 }
 
