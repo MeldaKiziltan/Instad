@@ -35,7 +35,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setData(null);
-    fetch(`${API_URL}/api?keyword=${keyword}&product=${product}`)
+    fetch(`${API_URL}/api?name=${name}&keyword=${keyword}&genre=${genre}&product=${product}`)
       .then((res) => res.json())
       .then((data) => {
         setData(`${data.slice(0, -2)}`);
