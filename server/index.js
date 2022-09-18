@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
 
+var sock = zmq.socket("push");
+sock.bindSync("tcp://127.0.0.1:5690");
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 
@@ -15,9 +18,6 @@ const cohere = require('cohere-ai');
 cohere.init('LjR1iCSazFdxxYWpG8wEZV2NIlSMHM76NdezG51G');
 
 app.get("/api", async (req, res) => {
-  var sock = zmq.socket("push");
-  sock.bindSync("tcp://127.0.0.1:5690");
-  console.log("Producer bound to port 127.0.0.1:5690");
   console.log("sending work");
 
   sock.send(`${req.query.genre}`);
