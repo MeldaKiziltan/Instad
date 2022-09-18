@@ -1,0 +1,19 @@
+.ad {
+    width: 600px;
+    height: 322px;
+    border: 1px solid #FFFFFF;
+    border-radius: 11px;
+
+    background-color: black;
+    color: white;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+}
+
+.ad img {
+    width: 300px;
+    height: 300px;
+}
+

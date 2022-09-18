@@ -1,9 +1,10 @@
 import './App.css';
-import { useState } from 'react';
 
+import Ad from './components/ad/ad.js';
 import Button from './components/button/button.js';
 import InputField from './components/inputField/inputField.js';
 import MainText from './components/mainText/mainText.js';
+import { useState } from 'react';
 
 function App() {
   const API_URL = 'http://localhost:3001';
@@ -11,6 +12,7 @@ function App() {
   const [data, setData] = useState(null);
   const [product, setPrompt] = useState('');
   const [keyword, setKeyword] = useState('');
+
 
   // Update prompt variable when handleChange is called
   const handleChangeProduct = (e) => {
@@ -34,8 +36,14 @@ function App() {
 
   return (
     <div className="App">
-        <div className="flex-left">
-          <img src={process.env.PUBLIC_URL+"instAd logo white shadow.png"} className="App-logo"/>
+        <img src={process.env.PUBLIC_URL+"instAd logo white shadow.png"} className="App-logo" alt="instAd logo"/>
+        <div className="absolute-left" >
+          <Ad 
+            src={process.env.PUBLIC_URL+"sample.png"}
+            name="SwatchX" 
+            slogan="Timelessly cool. Timelessly classic. Timelessly you."
+            >
+          </Ad>
         </div>
         <div className="flex-right">
           <MainText></MainText>
@@ -48,9 +56,7 @@ function App() {
           <div className="flex-button">
             <Button className="flex-button" text="CREATE" handleClick={handleSubmit}></Button>
           </div>
-
         </div>
-        
     </div>
   );
 }

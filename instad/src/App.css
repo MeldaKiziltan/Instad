@@ -40,7 +40,7 @@
 .flex-right {
   display: flex;
   flex-direction: column;
-  margin-left: 30%;
+  margin-left: 40%;
 }
 
 .flex-test {
@@ -60,4 +60,9 @@
   left: 30px;
   height: 108px;
   width: 219px;
+}
+
+.absolute-left {
+  position: absolute;
+  left: 10%;
 }
