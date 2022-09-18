@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
         <div className="flex-left">
+          <img src={process.env.PUBLIC_URL+"instAd logo white.png"} className="App-logo"/>
         </div>
         <div className="flex-right">
           <MainText></MainText>

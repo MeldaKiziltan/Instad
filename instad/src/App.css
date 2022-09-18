@@ -53,3 +53,11 @@
   display: flex;
   margin-left: auto;
 }
+
+.App-logo {
+  position: absolute;
+  top: 75px;
+  left: 30px;
+  height: 76px;
+  width: 187px;
+}
