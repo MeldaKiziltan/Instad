@@ -16,8 +16,8 @@ sock = context.socket(zmq.PULL)
 sock.connect("tcp://127.0.0.1:5690")
 
 p_genre = sock.recv()
-#p_type = socket.recv()
-#p_keys = socket.recv()
+p_type = sock.recv()
+p_keys = sock.recv()
 print ("%s " % (p_genre))
 
 stability_api = client.StabilityInference(
@@ -28,8 +28,8 @@ stability_api = client.StabilityInference(
 # the object returned is a python generator
 answers = stability_api.generate(
     #prompt= "%s %s, %s" % (p_genre, p_type, p_keys),
-    prompt = str(p_genre).encode("utf-8").decode("utf-8"),
-    seed=34567, # if provided, specifying a random seed makes results deterministic
+    prompt = str("%s %s, %s" % (p_genre, p_type, p_keys)).encode("utf-8").decode("utf-8"),
+    #seed=34567, # if provided, specifying a random seed makes results deterministic
     steps=50, # defaults to 50 if not specified
 )
 # iterating over the generator produces the api response

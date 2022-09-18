@@ -15,6 +15,15 @@ const cohere = require('cohere-ai');
 cohere.init('LjR1iCSazFdxxYWpG8wEZV2NIlSMHM76NdezG51G');
 
 app.get("/api", async (req, res) => {
+  var sock = zmq.socket("push");
+  sock.bindSync("tcp://127.0.0.1:5690");
+  console.log("Producer bound to port 127.0.0.1:5690");
+  console.log("sending work");
+
+  sock.send(`${req.query.genre}`);
+  sock.send(`${req.query.product}`);
+  sock.send(`${req.query.keyword}`);
+
   const prompt = `This is a product slogan generation tool. It generates advertisement slogans related to a given topic.\n--\nProduct: Monitor\nKeywords: curved, gaming\nSlogan: Curve up your Game.\n--\nProduct: Surfboard\nKeywords: refreshing, sporty\nSlogan: Matte. Sleek. Speedy.\n--\nProduct: Headphones\nKeywords: vibrant sound, lightweight\nSlogan: Move freely and stay in the zone.\n--\nProduct: Waterbottle\nKeywords: durable, large volume\nSlogan: Exercise in heavy-duty, with heavy-duty.\n--\nProduct: Shaver\nKeywords: cheap, efficient\nSlogan: Shave Time. Shave Money.\n--\nProduct: Skittles\nKeywords: tasty, colourful\nSlogan: Taste the rainbow. Feel the rainbow.\n--\nProduct: Burger\nKeywords: customizable, tasty\nSlogan: Have it your way, its tasty anyway.\n--\nProduct: Necklace\nKeywords: shiny, elegant\nSlogan: The elegence within its brilliance.\n--\nProduct: Coffee\nKeywords: smooth, hot\nSlogan: Kickstart your morning.\n--\nProduct: Chair\nKeywords: comfortable, portable\nSlogan: Go anywhere but sit anywhere.\n--\nProduct: Sunglasses\nKeywords: aesthtic, clear\nSlogan: Look great and see great.\n--\nProduct: Beer\nKeywords: happy, quality\nSlogan: Drink what you like, like what you drink.\n--\nProduct: Pen\nKeywords: ergonomic, smooth\nSlogan: Your writing, your pen, your style.\n--\nProduct: Knife\nKeywords: sharp, precise\nSlogan: Cut your work in half.\n--\nProduct: ${req.query.product}\nKeywords: ${req.query.keyword}\nSlogan:` ||''
   const response = await cohere.generate({
     model: 'large',
