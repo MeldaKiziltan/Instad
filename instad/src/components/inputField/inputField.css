@@ -1,9 +1,14 @@
 .input-field {
     display: flex;
     flex-direction: column;
+    color: black;
 
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.input-field:hover {
+    color: rgba(93, 25, 118, 0.95);
 }
 
 .input-field-text{
@@ -11,7 +16,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    color: black;
     
     line-height: 19px;
     text-align: left;
@@ -29,9 +33,9 @@
     font-size: 14px;
     color: rgb(52, 52, 52);
 
-    background: #FFFFFF;
+    background: white;
     border-radius: 15px;
-    border-width: 0;
+    border: 2px solid white;
 
     padding-left: 20px;
 

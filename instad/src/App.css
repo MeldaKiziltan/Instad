@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -39,20 +35,12 @@
 .flex-button {
   display: flex;
   margin: 20px;
-
-
 }
 
 .flex-right {
   display: flex;
   flex-direction: column;
-  margin-left: 40px;
-}
-
-.flex-left {
-  display: flex;
-  flex-direction: column;
-  margin-right: 40px;
+  margin-left: 30%;
 }
 
 .flex-test {

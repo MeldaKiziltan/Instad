@@ -2,15 +2,27 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 56px;
     line-height: 61px;
 
     text-align: left;
 
     color: #FFFFFF;
+    text-shadow: 1px 1px 16px #535252;
 }
 
 .special {
     font-style: oblique;
+    letter-spacing: 3px;
     color: #B262CEF2;
+    text-shadow: none;
+
+}
+
+.special:hover {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    cursor: default;
 }
