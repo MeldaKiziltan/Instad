@@ -10,13 +10,24 @@ function App() {
   const API_URL = 'http://localhost:3001';
 
   const [data, setData] = useState(null);
-  const [product, setPrompt] = useState('');
+  const [name, setName] = useState('');
+  const [product, setProduct] = useState('');
+  const [genre, setGenre] = useState('');
   const [keyword, setKeyword] = useState('');
 
 
   // Update prompt variable when handleChange is called
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+
   const handleChangeProduct = (e) => {
-    setPrompt(e.target.value);
+    setProduct(e.target.value);
+  };
+
+  const handleChangeGenre = (e) => {
+    setGenre(e.target.value);
   };
 
   const handleChangeKeyword = (e) => {
@@ -26,7 +37,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setData(null);
-    fetch(`${API_URL}/api?keyword=${keyword}&product=${product}`)
+    fetch(`${API_URL}/api?name=${name}&keyword=${keyword}&genre=${genre}&product=${product}`)
       .then((res) => res.json())
       .then((data) => {
         setData(`${data.slice(0, -2)}`);
@@ -48,9 +59,9 @@ function App() {
         <div className="flex-right">
           <MainText></MainText>
           <div className="flex-fields">
-            <InputField text="Product Name" preview="ex. HydrateIt"></InputField>
+            <InputField text="Product Name" preview="ex. HydrateIt" value={name} onChange={handleChangeName}></InputField>
             <InputField text="Product Type" preview="ex. water bottle" value={product} onChange={handleChangeProduct}></InputField>
-            <InputField text="Genre" preview="ex. enthusiastic"></InputField>
+            <InputField text="Genre" preview="ex. enthusiastic" value={genre} onChange={handleChangeGenre}></InputField>
             <InputField text="Keywords" preview="ex. exciting, flavorful, affordable" value={keyword} onChange={handleChangeKeyword}></InputField>
           </div>
           <div className="flex-button">
