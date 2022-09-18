@@ -6,12 +6,12 @@ class inputField extends React.Component {
 
     render() {
 
-        const { text, preview } = this.props;
+        const { text, preview, value, onChange} = this.props;
 
         return (
             <div className="input-field">
                 <div className="input-field-text">{text}</div>
-                <input className="input-field-box" placeholder={preview} />
+                <input className="input-field-box" placeholder={preview} value={value} onChange={onChange}/>
             </div>
         );
     }
