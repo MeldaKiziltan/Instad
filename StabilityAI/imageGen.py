@@ -33,9 +33,9 @@ while True:
     # the object returned is a python generator
     answers = stability_api.generate(
         #prompt= "%s %s, %s" % (p_genre, p_type, p_keys),
-        prompt = str("%s %s, %s" % (p_genre, p_type, p_keys)).encode("utf-8").decode("utf-8"),
+        prompt = str("%s %s" % (p_genre, p_type)).encode("utf-8").decode("utf-8"),
         #seed=34567, # if provided, specifying a random seed makes results deterministic
-        steps=50, # defaults to 50 if not specified
+        steps=100, # defaults to 50 if not specified
     )
     # iterating over the generator produces the api response
     for resp in answers:
@@ -49,6 +49,24 @@ while True:
                 img.show()
                 img = img.save("/Users/shabana/Coding/Instad/StabilityAI/ad.jpg");
 
+
+    answers = stability_api.generate(
+        #prompt= "%s %s, %s" % (p_genre, p_type, p_keys),
+        prompt = str("%s %s, %s" % (p_genre, p_type, p_keys)).encode("utf-8").decode("utf-8"),
+        #seed=34567, # if provided, specifying a random seed makes results deterministic
+        steps=100, # defaults to 50 if not specified
+    )
+    # iterating over the generator produces the api response
+    for resp in answers:
+        for artifact in resp.artifacts:
+            if artifact.finish_reason == generation.FILTER:
+                warnings.warn(
+                    "Your request activated the API's safety filters and could not be processed."
+                    "Please modify the prompt and try again.")
+            if artifact.type == generation.ARTIFACT_IMAGE:
+                img2 = Image.open(io.BytesIO(artifact.binary))
+                img2.show()
+                img2 = img2.save("/Users/shabana/Coding/Instad/StabilityAI/ad.jpg");
 
     sock1.send_string("ad.jpg")
     print("done")
