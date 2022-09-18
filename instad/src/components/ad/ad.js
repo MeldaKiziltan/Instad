@@ -10,12 +10,16 @@ class ad extends React.Component {
 
         return (
             <div className="ad">
-                <img src={src} alt="new ad"></img>
-                <div className="ad-name">
-                    {name}
-                </div>
-                <div className="ad-slogan">
-                    {slogan}
+                <img src={src} alt="ad"></img>
+                <div>
+                    <div className="ad-slogan">
+                        {/* Timeless something. Timeless something. Timeless you. */}
+                        {slogan}
+                    </div>
+                    <div className="ad-name">
+                        {/* SwatchX */}
+                        {name}
+                    </div>
                 </div>
             </div>
         );

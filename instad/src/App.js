@@ -50,9 +50,9 @@ function App() {
         <img src={process.env.PUBLIC_URL+"instAd logo white shadow.png"} className="App-logo" alt="instAd logo"/>
         <div className="absolute-left" >
           <Ad 
-            src={process.env.PUBLIC_URL+"sample.png"}
-            name="SwatchX" 
-            slogan="Timelessly cool. Timelessly classic. Timelessly you."
+            src={process.env.PUBLIC_URL+"ad.jpg"}
+            name={name}
+            slogan={data}
             >
           </Ad>
         </div>

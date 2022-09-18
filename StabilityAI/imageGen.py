@@ -46,8 +46,7 @@ while True:
                     "Please modify the prompt and try again.")
             if artifact.type == generation.ARTIFACT_IMAGE:
                 img = Image.open(io.BytesIO(artifact.binary))
-                img.show()
-                img = img.save("/Users/shabana/Coding/Instad/StabilityAI/ad.jpg");
+                img = img.save("/Users/jaspermai/htn2022/instad/public/pre-ad.jpg");
 
 
     answers = stability_api.generate(
@@ -65,8 +64,7 @@ while True:
                     "Please modify the prompt and try again.")
             if artifact.type == generation.ARTIFACT_IMAGE:
                 img2 = Image.open(io.BytesIO(artifact.binary))
-                img2.show()
-                img2 = img2.save("/Users/shabana/Coding/Instad/StabilityAI/ad.jpg");
+                img2 = img2.save("/Users/jaspermai/htn2022/instad/public/ad.jpg");
 
     sock1.send_string("ad.jpg")
     print("done")
